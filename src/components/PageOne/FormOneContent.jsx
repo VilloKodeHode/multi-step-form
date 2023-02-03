@@ -1,17 +1,14 @@
-import InputField from "../InputField";
+import { FormText } from "../Form";
+import InputField from "../FormFields";
 
 const FormOneContent = () => {
   return (
     <form className="text-design-MarineBlue text-left h-full w-full">
       <fieldset>
-        <div>
-          <div className="text-design-MarineBlue text-2xl font-semibold">
-            Personal info
-          </div>
-          <p className="text-design-CoolGray my-2">
-            Please provide your name, email address, and phone number.
-          </p>
-        </div>
+        <FormText
+          title="Personal info"
+          text=" Please provide your name, email address, and phone number."
+        />
         <div className="text-left text-design-MarineBlue font-medium">
           <InputField
             id="name"

@@ -1,20 +1,47 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx,html}"],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#061F32",
+
+          secondary: "#9DC1F7",
+
+          accent: "#E0F4FD",
+
+          richBlack: "#030104",
+
+          neutral: "#DAF4F9",
+
+          "base-100": "#87BDC2",
+
+          info: "#22555C",
+
+          success: "#22555C",
+
+          warning: "#22555C",
+
+          error: "white",
+        },
+      },
+    ],
+  },
   theme: {
     extend: {
       fontFamily: { Ubuntu: ["Ubuntu", "sans-serif"] },
       colors: {
         design: {
-          MarineBlue: "#061F32",
-          PurplishBlue: "#9DC1F7",
-          PastelBlue: "#E0F4FD",
-          LightBlue: "#DAF4F9",
-          StrawberryRed: "#FB4B39",
-          CoolGray: "#A7AEB2",
-          LightGray: "#E3E9ED",
-          Magnolia: "#FDFDFD",
-          Alabaster: "#FBFBFB",
+          MarineBlue: "#02295A",
+          PurplishBlue: "#473DFF",
+          PastelBlue: "#ADBEFF",
+          LightBlue: "#BFE2FD",
+          StrawberryRed: "#ED3548",
+          CoolGray: "#9699AB",
+          LightGray: "#D6D9E6",
+          Magnolia: "#F0F6FF",
+          Alabaster: "#FAFBFF",
           BG: "#eef5ff",
         },
       },

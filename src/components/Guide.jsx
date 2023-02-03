@@ -38,7 +38,7 @@ export const GuideStepButton = (props) => {
   const { number, text } = props;
   return (
     <div className="grid grid-flow-col w-fit gap-3">
-      <div className="relative rounded-full h-10 w-10 items-center font-semibold bg-design-PurplishBlue text-design-MarineBlue">
+      <div className="relative rounded-full h-10 w-10 items-center font-semibold bg-design-LightBlue text-design-MarineBlue">
         <p className="absolute top-1/2 translate-x-1/2 right-1/2 -translate-y-1/2">
           {number}
         </p>
@@ -55,7 +55,7 @@ export const InactiveGuideStepButton = (props) => {
   const { number, text } = props;
   return (
     <div className="grid grid-flow-col w-fit gap-3">
-      <div className="relative rounded-full h-10 w-10 items-center border-2 text-design-white font-semibold border-design-LightGray">
+      <div className="relative rounded-full h-10 w-10 items-center border text-design-white font-semibold border-white">
         <p className="absolute top-1/2 translate-x-1/2 right-1/2 -translate-y-1/2">
           {number}
         </p>
@@ -71,7 +71,7 @@ export const InactiveGuideStepButton = (props) => {
 export const Steps = () => {
   const { page } = useContext(PageIs);
   return (
-    <div className="grid grid-flow-col gap-4">
+    <div className="grid md:grid-flow-row grid-flow-col gap-4">
       {page === "one" ? (
         <GuideStepButton number="1" text="YOUR INFO" />
       ) : (
