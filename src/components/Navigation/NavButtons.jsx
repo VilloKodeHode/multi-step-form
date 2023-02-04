@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const NextStep = () => {
   const { page, setPage } = useContext(PageIs);
   return (
-    <button className="absolute md:bottom-0 bottom-4 md:right-0  right-4 rounded-md py-3 px-4 h-fit w-fit bg-design-MarineBlue text-design-Alabaster z-50">
+    <button className="absolute md:bottom-0 bottom-4 md:right-0 right-4 rounded-lg py-3 px-6 h-fit w-fit bg-design-MarineBlue text-design-Alabaster z-50">
       <Link
         onClick={() => {
           setPage(
@@ -17,7 +17,6 @@ const NextStep = () => {
               ? "four"
               : "five"
           );
-          console.log(page);
         }}
         to={
           page === "one"
@@ -52,7 +51,6 @@ export const GoBack = () => {
                   ? "three"
                   : null
               );
-              console.log(page);
             }}
             to="/"
           >

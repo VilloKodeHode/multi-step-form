@@ -1,26 +1,60 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-import PageOne, { PageFour, PageThree, PageTwo } from "./components/Pages";
+import PageOne, {
+  PageFive,
+  PageFour,
+  PageThree,
+  PageTwo,
+} from "./components/Pages";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import PageIs, { SliderChoice } from "./components/ContentChanger";
+import PageIs, {
+  SliderChoice,
+  AddOnChoice,
+  PlanChoice,
+} from "./components/ContentChanger";
 
 function App() {
   const [page, setPage] = useState("one");
   const [toggle, setToggle] = useState(true);
+  const [addon, setAddon] = useState(false, false, false);
+  const [plan, setPlan] = useState({
+    Arcade: false,
+    Advanced: false,
+    Pro: false,
+  });
+
+  useEffect(() => {
+    console.log(`Monthly or yearly?: ${toggle ? "Monthly" : "Yearly"}`);
+    console.log(`Addon choices: ${JSON.stringify(addon)}`);
+  }, [addon, toggle]);
+
+  useEffect(() => {
+    console.log(`Current Plan: ${JSON.stringify(plan)}`);
+  }, [plan]);
+
+  useEffect(() => {
+    console.log(`On page ${page}`);
+  }, [page]);
+
   return (
     <PageIs.Provider value={{ page, setPage }}>
-      <SliderChoice.Provider value={{ toggle, setToggle }}>
-        <div className="font-Ubuntu">
-          <Router>
-            <Routes>
-              <Route path="/" element={<PageOne />} />
-              <Route path="/steptwo" element={<PageTwo />} />
-              <Route path="/stepthree" element={<PageThree />} />
-              <Route path="/stepfour" element={<PageFour />} />
-            </Routes>
-          </Router>
-        </div>
-      </SliderChoice.Provider>
+      <PlanChoice.Provider value={{ plan, setPlan }}>
+        <SliderChoice.Provider value={{ toggle, setToggle }}>
+          <AddOnChoice.Provider value={{ addon, setAddon }}>
+            <div className="font-Ubuntu">
+              <Router>
+                <Routes>
+                  <Route path="/" element={<PageOne />} />
+                  <Route path="/steptwo" element={<PageTwo />} />
+                  <Route path="/stepthree" element={<PageThree />} />
+                  <Route path="/stepfour" element={<PageFour />} />
+                  <Route path="/finished" element={<PageFive />} />
+                </Routes>
+              </Router>
+            </div>
+          </AddOnChoice.Provider>
+        </SliderChoice.Provider>
+      </PlanChoice.Provider>
     </PageIs.Provider>
   );
 }

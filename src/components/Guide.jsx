@@ -87,7 +87,7 @@ export const Steps = () => {
       ) : (
         <InactiveGuideStepButton number="3" text="ADD-ONS" />
       )}
-      {page === "four" ? (
+      {page === "four" || page === "five" ? (
         <GuideStepButton number="4" text="SUMMERY" />
       ) : (
         <InactiveGuideStepButton number="4" text="SUMMERY" />

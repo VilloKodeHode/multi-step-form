@@ -1,19 +1,23 @@
-import LayoutOne, { LayoutFour, LayoutThree, LayoutTwo } from "./Layout";
+import Layout from "./Layout";
 
 const PageOne = () => {
-  return <LayoutOne />;
+  return <Layout />;
 };
 
 export const PageTwo = () => {
-  return <LayoutTwo />;
+  return <Layout />;
 };
 
 export const PageThree = () => {
-  return <LayoutThree />;
+  return <Layout />;
 };
 
 export const PageFour = () => {
-  return <LayoutFour />;
+  return <Layout />;
+};
+
+export const PageFive = () => {
+  return <Layout />;
 };
 
 export default PageOne;
