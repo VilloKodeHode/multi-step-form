@@ -36,6 +36,21 @@ function App() {
     console.log(`On page ${page}`);
   }, [page]);
 
+  useEffect(() => {
+    localStorage.setItem("addon", JSON.stringify(addon));
+    localStorage.setItem("toggle", JSON.stringify(toggle));
+    localStorage.setItem("plan", JSON.stringify(plan));
+  }, [addon, toggle, plan]);
+
+  useEffect(() => {
+    const storedAddon = localStorage.getItem("addon");
+    const storedToggle = localStorage.getItem("toggle");
+    const storedPlan = localStorage.getItem("plan");
+    if (storedAddon) setAddon(JSON.parse(storedAddon));
+    if (storedToggle) setToggle(JSON.parse(storedToggle));
+    if (storedPlan) setPlan(JSON.parse(storedPlan));
+  }, []);
+
   return (
     <PageIs.Provider value={{ page, setPage }}>
       <PlanChoice.Provider value={{ plan, setPlan }}>

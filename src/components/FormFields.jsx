@@ -101,6 +101,7 @@ export const AddOnField = (props) => {
           <label className="container">
             <input
               type="checkbox"
+              checked={addon[titletext]}
               className=""
               onClick={() => {
                 setAddon({ ...addon, [titletext]: !addon[titletext] });
