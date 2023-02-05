@@ -12,6 +12,7 @@ import PageIs, {
   AddOnChoice,
   PlanChoice,
 } from "./components/ContentChanger";
+import Layout from "./components/Layout";
 
 function App() {
   const [page, setPage] = useState("one");
@@ -57,7 +58,7 @@ function App() {
         <SliderChoice.Provider value={{ toggle, setToggle }}>
           <AddOnChoice.Provider value={{ addon, setAddon }}>
             <div className="font-Ubuntu">
-              <Router>
+              {/* <Router>
                 <Routes>
                   <Route path="/" element={<PageOne />} />
                   <Route path="/steptwo" element={<PageTwo />} />
@@ -65,7 +66,8 @@ function App() {
                   <Route path="/stepfour" element={<PageFour />} />
                   <Route path="/finished" element={<PageFive />} />
                 </Routes>
-              </Router>
+              </Router> */}
+              <Layout />
             </div>
           </AddOnChoice.Provider>
         </SliderChoice.Provider>

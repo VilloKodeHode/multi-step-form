@@ -21,7 +21,7 @@ const PlanPrice = () => {
         <p className="font-[500]">
           {currentPlan} {toggle ? "Monthly" : "Yearly"}
         </p>
-        <Link
+        {/* <Link
           className="underline"
           onClick={() => {
             setPage("two");
@@ -29,7 +29,16 @@ const PlanPrice = () => {
           to="/steptwo"
         >
           Change
-        </Link>
+        </Link> */}
+        <button
+          className="underline"
+          onClick={() => {
+            setPage("two");
+          }}
+          to="/steptwo"
+        >
+          Change
+        </button>
       </div>
       <div className="font-[500]">
         <p>{currentPlan === "Arcade" ? (toggle ? "$9/mo" : "$90/yr") : null}</p>

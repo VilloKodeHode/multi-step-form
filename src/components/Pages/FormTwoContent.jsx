@@ -13,7 +13,7 @@ const FormTwoContent = () => {
         title="Select you plan"
         text="You have the option of monthly or yearly billing."
       />
-      <div className="md:grid md:grid-flow-col grid-cols-3 md:h-[40%] gap-4">
+      <div className="md:grid md:grid-flow-col grid-cols-3 md:h-[40%] md:gap-4">
         <PlanField
           titletext="Arcade"
           src={ARCADE}

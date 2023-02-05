@@ -46,7 +46,7 @@ export const PlanField = (props) => {
             plan[titletext]
               ? "bg-design-Alabaster border-design-PurplishBlue"
               : null
-          } w-full md:h-44 border rounded-lg px-4 py-5 flex md:flex-col items-start md:justify-between text-left flex-row my-3`}
+          } w-full md:h-44 border rounded-lg px-4 py-5 flex md:flex-col items-start md:justify-between text-left flex-row my-[6px]`}
         >
           <img src={src} className="mr-2 h-12" />
           <div className="flex flex-col gap-1">
@@ -65,7 +65,7 @@ export const PlanField = (props) => {
 export const MonthlyOrYearly = () => {
   const { toggle, setToggle } = useContext(SliderChoice);
   return (
-    <div className=" bg-design-BG gap-4 font-semibold flex justify-center py-4 md:my-12 mt-6 rounded-lg">
+    <div className=" bg-design-BG gap-4 font-semibold flex justify-center py-3 md:my-12 mt-4 rounded-lg">
       {toggle === true && (
         <span className="text-design-MarineBlue">Monthly</span>
       )}

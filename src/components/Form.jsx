@@ -10,7 +10,7 @@ import FormFiveContent from "./Pages/FormFiveContent";
 const FormDesktop = () => {
   const { page } = useContext(PageIs);
   return (
-    <div className="flex flex-col justify-center mx-12 my-4 items-center relative rounded-lg ">
+    <div className="flex flex-col justify-center mx-12 my-4 items-center relative rounded-lg">
       {page === "one" ? <FormOneContent /> : null}
       {page === "two" ? <FormTwoContent /> : null}
       {page === "three" ? <FormThreeContent /> : null}
@@ -24,7 +24,7 @@ const FormDesktop = () => {
 export const FormMobile = () => {
   const { page } = useContext(PageIs);
   return (
-    <div className="flex flex-col justify-center my-8 items-center w-[92%] bg-white left-1/2 -translate-x-1/2 p-6 absolute top-16 rounded-lg z-50">
+    <div className="flex flex-col justify-center my-8 items-center w-[92%] bg-white left-1/2 -translate-x-1/2 p-6 absolute top-16 rounded-lg z-50 shadow-md">
       {page === "one" ? <FormOneContent /> : null}
       {page === "two" ? <FormTwoContent /> : null}
       {page === "three" ? <FormThreeContent /> : null}
