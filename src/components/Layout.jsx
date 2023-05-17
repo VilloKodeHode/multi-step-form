@@ -9,7 +9,7 @@ const Layout = () => {
   return (
     <>
       <div className="md:flex hidden">
-        <div className="grid grid-cols-[1fr_2fr] grid-flow-col mx-auto xl:w-[900px] w-[95%] bg-white p-4 rounded-xl z-50 relative shadow-md">
+        <div className="grid grid-cols-[1fr_2fr] grid-flow-col mx-auto xl:w-[900px] w-[95%] bg-white p-4 rounded-xl z-50 relative shadow-md animate-FormPopUp">
           <DesktopGuide />
           <FormDesktop />
         </div>

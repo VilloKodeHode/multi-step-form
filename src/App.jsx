@@ -1,12 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import PageOne, {
-  PageFive,
-  PageFour,
-  PageThree,
-  PageTwo,
-} from "./components/Pages";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import PageIs, {
   SliderChoice,
   AddOnChoice,
@@ -57,16 +50,7 @@ function App() {
       <PlanChoice.Provider value={{ plan, setPlan }}>
         <SliderChoice.Provider value={{ toggle, setToggle }}>
           <AddOnChoice.Provider value={{ addon, setAddon }}>
-            <div className="font-Ubuntu">
-              {/* <Router>
-                <Routes>
-                  <Route path="/" element={<PageOne />} />
-                  <Route path="/steptwo" element={<PageTwo />} />
-                  <Route path="/stepthree" element={<PageThree />} />
-                  <Route path="/stepfour" element={<PageFour />} />
-                  <Route path="/finished" element={<PageFive />} />
-                </Routes>
-              </Router> */}
+            <div className="font-Ubuntu [&>*]:animate-FormPopUp">
               <Layout />
             </div>
           </AddOnChoice.Provider>

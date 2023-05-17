@@ -63,13 +63,13 @@ module.exports = {
         "2xl": "1440px",
       },
       keyframes: {
-        spin: {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
+        popUp: {
+          "0%": { transform: "scale(0)", opacity: "0%" },
+          "100%": { transform: "scale(1)", opacity: "100%" },
         },
       },
       animation: {
-        DiceSpin: "spin 4s linear infinite",
+        FormPopUp: "popUp ease-in 0.3s",
       },
     },
   },

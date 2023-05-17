@@ -32,6 +32,7 @@ export const PlanField = (props) => {
       <button
         className="w-full"
         onClick={() => {
+          event.preventDefault(); 
           setPlan((prevPlan) => {
             Object.keys(prevPlan).forEach((planKey) => {
               prevPlan[planKey] = false;
