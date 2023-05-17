@@ -18,8 +18,8 @@ const FormOneContent = () => {
             text="Name"
           />
           <InputField
-            id="e-mail"
-            name="e-mail"
+            id="email"
+            name="email"
             type="email"
             placeholder="e.g. stephenking@lorem.com"
             text="Email address"

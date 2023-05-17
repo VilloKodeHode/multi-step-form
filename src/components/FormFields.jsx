@@ -1,10 +1,23 @@
 import { useState, useContext, useEffect } from "react";
 import CHECKMARK from "../assets/images/icon-checkmark.svg";
-import { SliderChoice, AddOnChoice, PlanChoice } from "./ContentChanger";
+import {
+  SliderChoice,
+  AddOnChoice,
+  PlanChoice,
+  PersonalInfo,
+} from "./ContentChanger";
 import PlanPrice, { AddonPrice, Total } from "./PriceCalculation";
 
 const InputField = (props) => {
+  const { personalInfo, setPersonalInfo } = useContext(PersonalInfo);
   const { id, name, placeholder, text, type } = props;
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setPersonalInfo((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
   return (
     <div>
       <label htmlFor={id} id={id} className="text-left text-xs">
@@ -18,6 +31,8 @@ const InputField = (props) => {
         className="w-full border rounded-[4px] px-4 py-2"
         minLength="2"
         required
+        onChange={handleInputChange}
+        value={personalInfo[name]}
       />
     </div>
   );

@@ -4,11 +4,17 @@ import PageIs, {
   SliderChoice,
   AddOnChoice,
   PlanChoice,
+  PersonalInfo,
 } from "./components/ContentChanger";
 import Layout from "./components/Layout";
 
 function App() {
   const [page, setPage] = useState("one");
+  const [personalInfo, setPersonalInfo] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
   const [toggle, setToggle] = useState(true);
   const [addon, setAddon] = useState(false, false, false);
   const [plan, setPlan] = useState({
@@ -16,6 +22,12 @@ function App() {
     Advanced: false,
     Pro: false,
   });
+
+  useEffect(() => {
+    console.log(`Name: ${JSON.stringify(personalInfo.name)}`);
+    console.log(`Email: ${JSON.stringify(personalInfo.email)}`);
+    console.log(`Phone: ${JSON.stringify(personalInfo.phone)}`);
+  }, [personalInfo]);
 
   useEffect(() => {
     console.log(`Monthly or yearly?: ${toggle ? "Monthly" : "Yearly"}`);
@@ -50,9 +62,11 @@ function App() {
       <PlanChoice.Provider value={{ plan, setPlan }}>
         <SliderChoice.Provider value={{ toggle, setToggle }}>
           <AddOnChoice.Provider value={{ addon, setAddon }}>
-            <div className="font-Ubuntu [&>*]:animate-FormPopUp">
-              <Layout />
-            </div>
+            <PersonalInfo.Provider value={{ personalInfo, setPersonalInfo }}>
+              <div className="font-Ubuntu [&>*]:animate-FormPopUp">
+                <Layout />
+              </div>
+            </PersonalInfo.Provider>
           </AddOnChoice.Provider>
         </SliderChoice.Provider>
       </PlanChoice.Provider>
